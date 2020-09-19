@@ -36,30 +36,33 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginTop="106dp"
-        android:layout_marginBottom="606dp"
+        android:layout_marginTop="175dp"
+        android:singleLine="true"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/txt_detalle_date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="200dp"
         android:singleLine="true"
         android:text="TextView" />
 
     <TextView
         android:id="@+id/txt_detalle_keywords"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="48dp"
         android:layout_alignParentTop="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginTop="146dp"
-        android:layout_marginBottom="566dp"
-        android:text="TextView"
-        android:singleLine="true"/>
+        android:layout_marginTop="225dp"
+        android:text="TextView" />
 
     <TextView
         android:id="@+id/txt_detalle_authors"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="68dp"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="693dp"
-        android:singleLine="true"
+        android:layout_marginTop="100dp"
         android:text="TextView" />
 
     <TextView
@@ -67,7 +70,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="170dp"
+        android:layout_marginTop="275dp"
         android:gravity="center"
         android:singleLine="true"
         android:text="ABSTRACT"
@@ -80,7 +83,8 @@
         android:layout_width="match_parent"
         android:layout_height="467dp"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="205dp"
+        android:layout_marginTop="300dp"
+
         android:gravity="center|top"
         android:text="TextView"
         android:textStyle="italic" />

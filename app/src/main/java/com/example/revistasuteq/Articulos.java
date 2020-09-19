@@ -75,7 +75,7 @@ public class Articulos extends AppCompatActivity implements Asynchtask {
 
         AdapterArticulo adapter=new AdapterArticulo(Articulos.this, articulos, new AdapterArticulo.OnItemClickListener() {
             @Override
-            public void onItemClick(String name,String url,String descripcion, String title, String doi, String keywords, String authors, int position) {
+            public void onItemClick(String name,String url,String descripcion, String title, String doi, String keywords, String authors, String date, int position) {
                 Intent intent=new Intent(Articulos.this, Detalle.class);
                 intent.putExtra("id", name);
                 intent.putExtra("url",url);
@@ -84,10 +84,8 @@ public class Articulos extends AppCompatActivity implements Asynchtask {
                 intent.putExtra("doi", doi);
                 intent.putExtra("key", keywords);
                 intent.putExtra("aut",authors);
+                intent.putExtra("date", date);
                 startActivity(intent);
-                //Uri uri= Uri.parse(url);
-                //Intent intent1=new Intent(Intent.ACTION_VIEW,uri);
-                //startActivity(intent1);
             }
         });
         int resId = R.anim.layout_animation_down_to_up;
@@ -103,10 +101,8 @@ public class Articulos extends AppCompatActivity implements Asynchtask {
             JSONObject articulo=JSONlista.getJSONObject(i);
             if(index==0){
                 aux=articulo.getString("UrlViewGalley");
-                return aux;
             }else{
                 aux=articulo.getString("UrlViewGalley");
-                return aux;
             }
         }
         return aux;
@@ -118,10 +114,8 @@ public class Articulos extends AppCompatActivity implements Asynchtask {
             JSONObject articulo=JSONlista.getJSONObject(i);
             if(i==0){
                 aux=articulo.getString("keyword");
-                return aux;
-            }else{
+            }else if(i>=1){
                 aux= articulo.getString("keyword") + ", " + aux;
-                return aux;
             }
         }
         return aux;
@@ -133,10 +127,8 @@ public class Articulos extends AppCompatActivity implements Asynchtask {
             JSONObject articulo=JSONlista.getJSONObject(i);
             if(i==0){
                 aux=articulo.getString("nombres");
-                return aux;
-            }else{
+            }else if(i>=1){
                 aux= articulo.getString("nombres") + ", " + aux;
-                return aux;
             }
         }
         return aux;

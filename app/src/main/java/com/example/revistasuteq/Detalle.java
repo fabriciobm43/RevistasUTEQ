@@ -14,7 +14,7 @@ public class Detalle extends AppCompatActivity {
 
     TextView titulo;
     Button btnpdf;
-    TextView txt_doi, txt_keywords, txt_abs, txt_aut;
+    TextView txt_doi, txt_keywords, txt_abs, txt_aut, txt_date;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,6 +28,7 @@ public class Detalle extends AppCompatActivity {
         String doi= dato.getString("doi");
         String key=dato.getString("key");
         String aut=dato.getString("aut");
+        String date=dato.getString("date");
         //Toast toast1 = Toast.makeText(getApplicationContext(),title, Toast.LENGTH_SHORT);
         //toast1.show();
 
@@ -37,11 +38,13 @@ public class Detalle extends AppCompatActivity {
         txt_doi.setText("DOI: "+doi);
         btnpdf=findViewById(R.id.btn_pdf);
         txt_keywords=findViewById(R.id.txt_detalle_keywords);
-        txt_keywords.setText("Palabras clave: "+key);
+        txt_keywords.setText("PALABRAS CLAVE: "+key);
         txt_abs=findViewById(R.id.txt_detalle_abstract);
         txt_abs.setText(descripcion);
         txt_aut=findViewById(R.id.txt_detalle_authors);
-        txt_aut.setText("Autores: "+aut);
+        txt_aut.setText("AUTORES: "+aut);
+        txt_date=findViewById(R.id.txt_detalle_date);
+        txt_date.setText(date);
         btnpdf.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

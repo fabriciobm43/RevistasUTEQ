@@ -44,7 +44,7 @@ public class AdapterArticulo extends RecyclerView.Adapter<AdapterArticulo.ViewHo
         holder.section.setText(articulo.getSection());
         holder.title.setText(articulo.getTitle());
         holder.date.setText(articulo.getDate());
-        holder.bind(articulo.getSectionid(),articulo.getUrl(),articulo.getDescripcion(),articulo.getTitle(), articulo.getDoi(),articulo.getKeywords(), articulo.getAuthors(),listener);
+        holder.bind(articulo.getSectionid(),articulo.getUrl(),articulo.getDescripcion(),articulo.getTitle(), articulo.getDoi(),articulo.getKeywords(), articulo.getAuthors(),articulo.getDate(),listener);
     }
 
     @Override
@@ -66,11 +66,11 @@ public class AdapterArticulo extends RecyclerView.Adapter<AdapterArticulo.ViewHo
             date = itemView.findViewById(R.id.txt_autores_article);
             sectionid = itemView.findViewById(R.id.txt_id_article);
         }
-        public void bind(final String name, final String url, final String descripcion, final String title, final String doi, final String keywords, final String authors, final OnItemClickListener listener) {
+        public void bind(final String name, final String url, final String descripcion, final String title, final String doi, final String keywords, final String authors, final String date, final OnItemClickListener listener) {
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    listener.onItemClick(name, url, descripcion, title, doi,keywords, authors, getAdapterPosition());
+                    listener.onItemClick(name, url, descripcion, title, doi,keywords, authors, date, getAdapterPosition());
 
                 }
             });
@@ -80,7 +80,7 @@ public class AdapterArticulo extends RecyclerView.Adapter<AdapterArticulo.ViewHo
 
     }
     public  interface OnItemClickListener{
-        void onItemClick(String name,String url,String descripcion, String title, String doi, String keywords,String authors, int position);
+        void onItemClick(String name,String url,String descripcion, String title, String doi, String keywords,String authors, String date, int position);
 
     }
 }
